@@ -1,7 +1,7 @@
 {
   "checked": "2026-10-26",
-  "public_upload_count": 126,
-  "included_count": 125,
+  "public_upload_count": 127,
+  "included_count": 126,
   "pages": {
     "bungie": [
       {
@@ -513,6 +513,12 @@
       {
         "id": "495688115",
         "title": "Tom Saville - Gameplay & Film Animation Demo Reel"
+      }
+    ],
+    "epic-games": [
+      {
+        "id": "1239406392",
+        "title": "Fortnite – Ballistic (Enforcer)"
       }
     ]
   },
