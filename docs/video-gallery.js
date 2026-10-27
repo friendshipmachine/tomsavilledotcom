@@ -34,7 +34,10 @@
   const id=frame.src.match(/video\/(\d+)/)?.[1],info=data[id];if(!info)return;
   const index=entries.length;entries.push({frame,info});
   const button=document.createElement('button');button.type='button';button.className='video-preview';button.setAttribute('aria-label','Watch '+frame.title+' in large view');
-  const img=document.createElement('img');img.src=info.thumbnail;img.alt=frame.title;img.loading='lazy';img.decoding='async';
+  const img=document.createElement('img');const thumbnailAt=width=>info.thumbnail.replace(/_\d+(?:x\d+)?(?=\?|$)/,'_'+width);
+  img.src=thumbnailAt(1280);img.srcset=[640,1280,1920].map(width=>thumbnailAt(width)+' '+width+'w').join(', ');
+  img.sizes='auto, (max-width: 700px) 100vw, 1120px';
+  img.addEventListener('error',()=>{img.removeAttribute('srcset');if(img.src!==info.thumbnail)img.src=info.thumbnail;},{once:true});img.alt=frame.title;img.loading='lazy';img.decoding='async';
   const label=document.createElement('span');label.className='video-preview-label';label.textContent='▶ Watch in large view';button.append(img,label);
   button.addEventListener('click',()=>{opener=button;previousOverflow=document.body.style.overflow;show(index);document.body.style.overflow='hidden';dialog.showModal();closeButton.focus()});
   frame.replaceWith(button);
