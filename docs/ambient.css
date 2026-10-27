@@ -142,3 +142,14 @@ body,body h1,body h2,body h3,body p,body a,body span,body div,body button,body i
 
 /* Strong, responsive studio titles. */
 .project-detail-page .page-header h1.title{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:clamp(36px,5.3vw,72px)!important;font-weight:500!important;line-height:1.08!important;letter-spacing:-.025em!important;color:#f3f3f3!important;text-wrap:balance;}
+
+.video-viewer-footer{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:12px}
+.video-viewer-footer .video-caption{margin:0;min-width:0}
+.video-sequence{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.video-sequence[hidden]{display:none}
+.video-sequence button{min-height:44px;border:1px solid #ffffff30;border-radius:24px;padding:8px 16px;background:#ffffff08;color:#eee;cursor:pointer;font:400 14px/1.4 Helvetica,Arial,sans-serif}
+.video-sequence button:hover:not([aria-disabled="true"]){background:#ffffff18;border-color:#ffffff60}
+.video-sequence button[aria-disabled="true"]{opacity:.3;cursor:default}
+.video-sequence button:focus-visible{outline:2px solid #9ed6ff;outline-offset:3px}
+.video-position{font:12px/1.4 Helvetica,Arial,sans-serif;color:#aaa;white-space:nowrap;font-variant-numeric:tabular-nums}
+@media(max-width:700px){.video-viewer-footer{flex-direction:column;align-items:stretch;gap:10px}.video-sequence{justify-content:space-between}.video-lightbox{padding-left:12px;padding-right:12px}.video-sequence button{padding:8px 12px}}
