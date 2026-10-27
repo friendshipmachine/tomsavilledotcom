@@ -153,3 +153,11 @@ body,body h1,body h2,body h3,body p,body a,body span,body div,body button,body i
 .video-sequence button:focus-visible{outline:2px solid #9ed6ff;outline-offset:3px}
 .video-position{font:12px/1.4 Helvetica,Arial,sans-serif;color:#aaa;white-space:nowrap;font-variant-numeric:tabular-nums}
 @media(max-width:700px){.video-viewer-footer{flex-direction:column;align-items:stretch;gap:10px}.video-sequence{justify-content:space-between}.video-lightbox{padding-left:12px;padding-right:12px}.video-sequence button{padding:8px 12px}}
+
+/* Isolate the viewer footer from the site's full-width navigation rules. */
+.video-lightbox .video-viewer-footer{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:16px;margin-top:18px;width:100%}
+.video-lightbox .video-caption{display:block;width:100%;max-width:none;flex:none;margin:0;text-align:left;line-height:1.5;white-space:normal;overflow-wrap:break-word}
+.video-lightbox .video-sequence{position:static;display:flex;width:100%;max-width:100%;margin:0;padding:0;float:none;align-items:center;justify-content:center;gap:18px;flex:none}
+.video-lightbox .video-sequence[hidden]{display:none}
+.video-lightbox .video-sequence button{flex:0 0 auto;white-space:nowrap}
+@media(max-width:700px){.video-lightbox .video-viewer-footer{gap:12px;margin-top:14px}.video-lightbox .video-sequence{gap:12px;justify-content:space-between}}
